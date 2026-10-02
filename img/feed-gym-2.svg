@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A222E"/>
+      <stop offset="1" stop-color="#6A86A0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1350" fill="url(#g)"/>
+  <circle cx="880" cy="240" r="360" fill="#131311" opacity="0.18"/>
+  <circle cx="240" cy="1120" r="420" fill="#131311" opacity="0.12"/>
+  <rect x="64" y="1104" width="12" height="86" fill="#C98B8B" opacity="0.9"/>
+  <text x="64" y="1076" font-family="Georgia, serif" font-size="58" fill="#F4EFE7" opacity="0.94">GYM POST 02</text>
+  <text x="64" y="1186" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="5" fill="#F4EFE7" opacity="0.55">PLACEHOLDER / REPLACE WITH A REAL PHOTO</text>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  UPDATE-ME: <loc> is a placeholder for the not-yet-deployed Netlify
+  subdomain. Change it together with the Sitemap line in robots.txt and
+  canonical/og:url in index.html when the real subdomain is known.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://khrystyna-social-manager.netlify.app/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

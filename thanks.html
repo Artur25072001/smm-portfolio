@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- This page is the post-submission confirmation for the contact form
+         on the homepage. It has no value in search results, so it is kept
+         out of them. It must stay reachable: if it is ever renamed, the
+         form's action="/thanks.html" has to be updated in the same
+         commit, otherwise a submitted form lands on a 404. -->
+    <meta name="robots" content="noindex, follow" />
+
+    <title>Message sent &mdash; Khrystyna Donik &middot; Social</title>
+    <meta
+      name="description"
+      content="Your message has been received. Khrystyna replies within one business day with a sample content plan and a flat price."
+    />
+
+    <!-- Fonts: Sora + Inter, the same pair as the whole portfolio family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              rose: { DEFAULT: "#C98B8B", dark: "#B07676", soft: "#2A1D1D" },
+              ink: { DEFAULT: "#131311", muted: "#5E5E58" },
+              cream: { DEFAULT: "#F4EFE7", muted: "#A39C90" },
+              espresso: "#131311",
+              shell: "#FAF9F6",
+              line: "#E7E7E1",
+              paper: "#FAF9F6",
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+              display: [
+                "Sora",
+                "Inter",
+                "ui-sans-serif",
+                "system-ui",
+                "sans-serif",
+              ],
+              editorial: ["Georgia", "'Times New Roman'", "Times", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid #c98b8b;
+        outline-offset: 3px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-espresso font-sans text-cream antialiased">
+    <main
+      class="mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center px-5 py-24 text-center"
+    >
+      <span
+        class="flex h-14 w-14 items-center justify-center rounded-sm bg-rose font-display text-lg font-bold text-espresso"
+        >KD</span
+      >
+
+      <h1
+        class="mt-8 font-display text-3xl font-bold tracking-tight text-cream sm:text-4xl"
+      >
+        Message sent &mdash; thank you.
+      </h1>
+
+      <p class="mt-5 text-lg leading-relaxed text-cream-muted">
+        Your message is in. I reply to every one within a business day &mdash;
+        with a sample month for your page and a flat price, not a
+        &ldquo;book a call to hear a number&rdquo;.
+      </p>
+
+      <p class="mt-3 text-sm leading-relaxed text-cream-muted">
+        While you wait:
+        <a
+          href="https://khrystyna-donik-photography.netlify.app/"
+          class="font-medium text-rose underline-offset-4 transition hover:underline"
+          >see the photography portfolio</a
+        >, or the
+        <a
+          href="https://portfolio-artur-dymchevskyi.netlify.app/#social"
+          class="font-medium text-rose underline-offset-4 transition hover:underline"
+          >full price list on the main portfolio</a
+        >.
+      </p>
+
+      <a
+        href="/"
+        class="mt-10 inline-flex items-center justify-center rounded-sm bg-rose px-7 py-3.5 text-sm font-semibold text-espresso transition hover:-translate-y-px hover:bg-rose-dark hover:text-cream"
+        >Back to the portfolio</a
+      >
+    </main>
+  </body>
+</html>

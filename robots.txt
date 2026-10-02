@@ -1,0 +1,10 @@
+# Khrystyna Donik — Social Media Management
+# All pages are welcome in search results.
+
+User-agent: *
+Allow: /
+
+# UPDATE-ME: this is a placeholder for the not-yet-deployed Netlify
+# subdomain. Change it together with <loc> in sitemap.xml and
+# canonical/og:url in index.html when the real subdomain is known.
+Sitemap: https://khrystyna-social-manager.netlify.app/sitemap.xml
