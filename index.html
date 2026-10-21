@@ -328,6 +328,7 @@
       .no-scrollbar {
         scrollbar-width: none;
         -ms-overflow-style: none;
+        overscroll-behavior: contain;
       }
       .no-scrollbar::-webkit-scrollbar {
         display: none;
@@ -1554,62 +1555,102 @@
                 update as permissions come in.
               </p>
             </div>
-            <!-- Mini feed mockup -->
-            <div class="reveal mx-auto w-full max-w-[300px]">
+            <!-- Mini feed mockup: a real-size phone with the feed
+                 scrolling inside it, so the column beside it stays
+                 balanced and the phone stays put while the case is read. -->
+            <div
+              class="reveal mx-auto w-full max-w-[300px] lg:sticky lg:top-24 lg:self-start"
+            >
               <div
                 class="rounded-[1.8rem] border border-line bg-espresso p-2 shadow-xl shadow-black/10"
               >
-                <div class="rounded-[1.4rem] bg-[#101010] p-3">
-                  <div class="flex gap-2.5 px-1 pb-1">
+                <div
+                  class="flex h-[520px] flex-col overflow-hidden rounded-[1.4rem] bg-[#101010]"
+                >
+                  <div
+                    class="flex items-center justify-between px-5 pt-2.5 text-[0.6rem] font-semibold text-cream/70"
+                  >
+                    <span>9:41</span>
+                    <span class="flex items-center gap-1" aria-hidden="true">
+                      <span class="h-1.5 w-1.5 rounded-full bg-cream/60"></span>
+                      <span class="h-1.5 w-1.5 rounded-full bg-cream/60"></span>
+                      <span class="h-1.5 w-2 rounded-sm bg-cream/60"></span>
+                    </span>
+                  </div>
+                  <div
+                    class="mt-2 flex items-center gap-2.5 border-b border-white/10 px-4 pb-2.5"
+                  >
                     <span
-                      class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-tr from-rose to-cream p-[2px]"
+                      class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-rose to-[#7A4A56] font-display text-[0.6rem] font-bold text-espresso"
+                      >KD</span
                     >
+                    <p class="text-[0.75rem] font-semibold text-cream">
+                      your.salon.here
+                    </p>
+                    <span class="ml-auto text-cream-muted" aria-hidden="true"
+                      >&middot;&middot;&middot;</span
+                    >
+                  </div>
+                  <div class="no-scrollbar flex-1 overflow-y-auto p-3">
+                    <div class="flex gap-2.5 px-1 pb-1">
+                      <span
+                        class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-tr from-rose to-cream p-[2px]"
+                      >
+                        <img
+                          src="img/feed-salon-1.svg"
+                          alt=""
+                          class="h-full w-full rounded-full object-cover"
+                          loading="lazy"
+                        />
+                      </span>
+                      <span
+                        class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-tr from-rose to-cream p-[2px]"
+                      >
+                        <img
+                          src="img/feed-salon-2.svg"
+                          alt=""
+                          class="h-full w-full rounded-full object-cover"
+                          loading="lazy"
+                        />
+                      </span>
+                      <span
+                        class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-tr from-rose to-cream p-[2px]"
+                      >
+                        <img
+                          src="img/feed-salon-3.svg"
+                          alt=""
+                          class="h-full w-full rounded-full object-cover"
+                          loading="lazy"
+                        />
+                      </span>
+                    </div>
+                    <img
+                      src="img/feed-salon-1.svg"
+                      alt="Placeholder: a salon feed post — replace with a real client screenshot"
+                      class="mt-2 aspect-[4/5] w-full rounded-lg object-cover"
+                      loading="lazy"
+                    />
+                    <div class="mt-2.5 grid grid-cols-3 gap-1">
                       <img
                         src="img/feed-salon-1.svg"
                         alt=""
-                        class="h-full w-full rounded-full object-cover"
+                        class="aspect-square w-full rounded-md object-cover"
                         loading="lazy"
                       />
-                    </span>
-                    <span
-                      class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-tr from-rose to-cream p-[2px]"
-                    >
                       <img
                         src="img/feed-salon-2.svg"
                         alt=""
-                        class="h-full w-full rounded-full object-cover"
+                        class="aspect-square w-full rounded-md object-cover"
                         loading="lazy"
                       />
-                    </span>
-                    <span
-                      class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-tr from-rose to-cream p-[2px]"
-                    >
                       <img
                         src="img/feed-salon-3.svg"
                         alt=""
-                        class="h-full w-full rounded-full object-cover"
+                        class="aspect-square w-full rounded-md object-cover"
                         loading="lazy"
                       />
-                    </span>
+                    </div>
                   </div>
-                  <img
-                    src="img/feed-salon-1.svg"
-                    alt="Placeholder: a salon feed post — replace with a real client screenshot"
-                    class="mt-2 aspect-[4/5] w-full rounded-lg object-cover"
-                    loading="lazy"
-                  />
-                  <img
-                    src="img/feed-salon-2.svg"
-                    alt="Placeholder: a salon feed post — replace with a real client screenshot"
-                    class="mt-2 aspect-[4/5] w-full rounded-lg object-cover"
-                    loading="lazy"
-                  />
-                  <img
-                    src="img/feed-salon-3.svg"
-                    alt="Placeholder: a salon feed post — replace with a real client screenshot"
-                    class="mt-2 aspect-[4/5] w-full rounded-lg object-cover"
-                    loading="lazy"
-                  />
                 </div>
               </div>
               <p class="mt-4 text-center text-xs text-ink-muted">
@@ -1752,29 +1793,99 @@
               </p>
             </div>
 
-            <div class="reveal mx-auto w-full max-w-[300px]">
+            <div
+              class="reveal mx-auto w-full max-w-[300px] lg:sticky lg:top-24 lg:self-start"
+            >
               <div
                 class="rounded-[1.8rem] border border-line bg-espresso p-2 shadow-xl shadow-black/10"
               >
-                <div class="rounded-[1.4rem] bg-[#101010] p-3">
-                  <img
-                    src="img/feed-trattoria-1.svg"
-                    alt="Placeholder: a trattoria feed post — replace with a real client screenshot"
-                    class="aspect-[4/5] w-full rounded-lg object-cover"
-                    loading="lazy"
-                  />
-                  <img
-                    src="img/feed-trattoria-2.svg"
-                    alt="Placeholder: a trattoria feed post — replace with a real client screenshot"
-                    class="mt-2 aspect-[4/5] w-full rounded-lg object-cover"
-                    loading="lazy"
-                  />
-                  <img
-                    src="img/feed-trattoria-3.svg"
-                    alt="Placeholder: a trattoria feed post — replace with a real client screenshot"
-                    class="mt-2 aspect-[4/5] w-full rounded-lg object-cover"
-                    loading="lazy"
-                  />
+                <div
+                  class="flex h-[520px] flex-col overflow-hidden rounded-[1.4rem] bg-[#101010]"
+                >
+                  <div
+                    class="flex items-center justify-between px-5 pt-2.5 text-[0.6rem] font-semibold text-cream/70"
+                  >
+                    <span>9:41</span>
+                    <span class="flex items-center gap-1" aria-hidden="true">
+                      <span class="h-1.5 w-1.5 rounded-full bg-cream/60"></span>
+                      <span class="h-1.5 w-1.5 rounded-full bg-cream/60"></span>
+                      <span class="h-1.5 w-2 rounded-sm bg-cream/60"></span>
+                    </span>
+                  </div>
+                  <div
+                    class="mt-2 flex items-center gap-2.5 border-b border-white/10 px-4 pb-2.5"
+                  >
+                    <span
+                      class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#A07C42] to-[#33281A] font-display text-[0.6rem] font-bold text-espresso"
+                      >NB</span
+                    >
+                    <p class="text-[0.75rem] font-semibold text-cream">
+                      your.kitchen.here
+                    </p>
+                    <span class="ml-auto text-cream-muted" aria-hidden="true"
+                      >&middot;&middot;&middot;</span
+                    >
+                  </div>
+                  <div class="no-scrollbar flex-1 overflow-y-auto p-3">
+                    <div class="flex gap-2.5 px-1 pb-1">
+                      <span
+                        class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-tr from-rose to-cream p-[2px]"
+                      >
+                        <img
+                          src="img/feed-trattoria-1.svg"
+                          alt=""
+                          class="h-full w-full rounded-full object-cover"
+                          loading="lazy"
+                        />
+                      </span>
+                      <span
+                        class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-tr from-rose to-cream p-[2px]"
+                      >
+                        <img
+                          src="img/feed-trattoria-2.svg"
+                          alt=""
+                          class="h-full w-full rounded-full object-cover"
+                          loading="lazy"
+                        />
+                      </span>
+                      <span
+                        class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-tr from-rose to-cream p-[2px]"
+                      >
+                        <img
+                          src="img/feed-trattoria-3.svg"
+                          alt=""
+                          class="h-full w-full rounded-full object-cover"
+                          loading="lazy"
+                        />
+                      </span>
+                    </div>
+                    <img
+                      src="img/feed-trattoria-1.svg"
+                      alt="Placeholder: a trattoria feed post — replace with a real client screenshot"
+                      class="mt-2 aspect-[4/5] w-full rounded-lg object-cover"
+                      loading="lazy"
+                    />
+                    <div class="mt-2.5 grid grid-cols-3 gap-1">
+                      <img
+                        src="img/feed-trattoria-1.svg"
+                        alt=""
+                        class="aspect-square w-full rounded-md object-cover"
+                        loading="lazy"
+                      />
+                      <img
+                        src="img/feed-trattoria-2.svg"
+                        alt=""
+                        class="aspect-square w-full rounded-md object-cover"
+                        loading="lazy"
+                      />
+                      <img
+                        src="img/feed-trattoria-3.svg"
+                        alt=""
+                        class="aspect-square w-full rounded-md object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
               <p class="mt-4 text-center text-xs text-ink-muted">
@@ -1917,29 +2028,99 @@
               </p>
             </div>
 
-            <div class="reveal mx-auto w-full max-w-[300px]">
+            <div
+              class="reveal mx-auto w-full max-w-[300px] lg:sticky lg:top-24 lg:self-start"
+            >
               <div
                 class="rounded-[1.8rem] border border-line bg-espresso p-2 shadow-xl shadow-black/10"
               >
-                <div class="rounded-[1.4rem] bg-[#101010] p-3">
-                  <img
-                    src="img/feed-gym-1.svg"
-                    alt="Placeholder: a gym feed post — replace with a real client screenshot"
-                    class="aspect-[4/5] w-full rounded-lg object-cover"
-                    loading="lazy"
-                  />
-                  <img
-                    src="img/feed-gym-2.svg"
-                    alt="Placeholder: a gym feed post — replace with a real client screenshot"
-                    class="mt-2 aspect-[4/5] w-full rounded-lg object-cover"
-                    loading="lazy"
-                  />
-                  <img
-                    src="img/feed-gym-3.svg"
-                    alt="Placeholder: a gym feed post — replace with a real client screenshot"
-                    class="mt-2 aspect-[4/5] w-full rounded-lg object-cover"
-                    loading="lazy"
-                  />
+                <div
+                  class="flex h-[520px] flex-col overflow-hidden rounded-[1.4rem] bg-[#101010]"
+                >
+                  <div
+                    class="flex items-center justify-between px-5 pt-2.5 text-[0.6rem] font-semibold text-cream/70"
+                  >
+                    <span>9:41</span>
+                    <span class="flex items-center gap-1" aria-hidden="true">
+                      <span class="h-1.5 w-1.5 rounded-full bg-cream/60"></span>
+                      <span class="h-1.5 w-1.5 rounded-full bg-cream/60"></span>
+                      <span class="h-1.5 w-2 rounded-sm bg-cream/60"></span>
+                    </span>
+                  </div>
+                  <div
+                    class="mt-2 flex items-center gap-2.5 border-b border-white/10 px-4 pb-2.5"
+                  >
+                    <span
+                      class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#4A6478] to-[#1E2733] font-display text-[0.6rem] font-bold text-espresso"
+                      >GY</span
+                    >
+                    <p class="text-[0.75rem] font-semibold text-cream">
+                      your.studio.here
+                    </p>
+                    <span class="ml-auto text-cream-muted" aria-hidden="true"
+                      >&middot;&middot;&middot;</span
+                    >
+                  </div>
+                  <div class="no-scrollbar flex-1 overflow-y-auto p-3">
+                    <div class="flex gap-2.5 px-1 pb-1">
+                      <span
+                        class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-tr from-rose to-cream p-[2px]"
+                      >
+                        <img
+                          src="img/feed-gym-1.svg"
+                          alt=""
+                          class="h-full w-full rounded-full object-cover"
+                          loading="lazy"
+                        />
+                      </span>
+                      <span
+                        class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-tr from-rose to-cream p-[2px]"
+                      >
+                        <img
+                          src="img/feed-gym-2.svg"
+                          alt=""
+                          class="h-full w-full rounded-full object-cover"
+                          loading="lazy"
+                        />
+                      </span>
+                      <span
+                        class="h-9 w-9 shrink-0 rounded-full bg-gradient-to-tr from-rose to-cream p-[2px]"
+                      >
+                        <img
+                          src="img/feed-gym-3.svg"
+                          alt=""
+                          class="h-full w-full rounded-full object-cover"
+                          loading="lazy"
+                        />
+                      </span>
+                    </div>
+                    <img
+                      src="img/feed-gym-1.svg"
+                      alt="Placeholder: a gym feed post — replace with a real client screenshot"
+                      class="mt-2 aspect-[4/5] w-full rounded-lg object-cover"
+                      loading="lazy"
+                    />
+                    <div class="mt-2.5 grid grid-cols-3 gap-1">
+                      <img
+                        src="img/feed-gym-1.svg"
+                        alt=""
+                        class="aspect-square w-full rounded-md object-cover"
+                        loading="lazy"
+                      />
+                      <img
+                        src="img/feed-gym-2.svg"
+                        alt=""
+                        class="aspect-square w-full rounded-md object-cover"
+                        loading="lazy"
+                      />
+                      <img
+                        src="img/feed-gym-3.svg"
+                        alt=""
+                        class="aspect-square w-full rounded-md object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
               <p class="mt-4 text-center text-xs text-ink-muted">
